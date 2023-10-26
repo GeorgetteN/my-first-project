@@ -5,12 +5,19 @@
     font-family: 'Poppins', sans-serif;
 }
 
+:root{
+    --bg-color:#081b29;
+    --second-bg-color:#112e42;
+    --text-color:#ededed;
+    --main-color:#00abf0;
+}
+
 body {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #4070f4;
+    background-color: var(--bg-color);
 }
 
 .container {
@@ -19,7 +26,7 @@ body {
     width: 100%;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px var(--second-bg-color);
     overflow: hidden;
     margin: 0 20px;
 }
@@ -73,7 +80,7 @@ body {
     bottom: 0;
     height: 3px;
     width: 30px;
-    background-color: #4070f4;
+    background-color: var(--bg-color);
     border-radius: 25px;
 }
 
@@ -98,7 +105,7 @@ body {
 }
 
 .input-field input:is(:focus, :valid) {
-    border-bottom-color: #4070f4;
+    border-bottom-color: var(--bg-color);
 }
 
 .input-field i {
@@ -111,14 +118,14 @@ body {
 }
 
 .input-field input:is(:focus, :valid)~i {
-    color: #4070f4;
+    color: var(--bg-color);
 }
 
 .input-field i.icon {
     left: 0;
 }
 
-.input-field i.showHidePw {
+.input-field i.showrigth {
     right: 0;
     cursor: pointer;
     padding: 10px;
@@ -138,7 +145,7 @@ body {
 
 .checkbox-content input {
     margin-right: 10px;
-    accent-color: #4070f4;
+    accent-color: var(--bg-color);
 }
 
 .form .text {
@@ -147,7 +154,7 @@ body {
 }
 
 .form a.text {
-    color: #4070f4;
+    color: var(--bg-color);
     text-decoration: none;
 }
 
@@ -166,13 +173,13 @@ body {
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 6px;
-    background-color: #4070f4;
+    background-color: var(--bg-color);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .button input:hover {
-    background-color: #265df2;
+    background-color: var(--second-bg-color);
 }
 
 .form .login-signup {
