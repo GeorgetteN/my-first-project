@@ -27,6 +27,8 @@ myserver.post('/save_form', (request, response) => {
                 nachname: fields.nachname[0],
                 email: fields.email[0],
                 nachricht: fields.nachricht[0],
+                abwesend:fields.options[0],
+                
                 crDate: Date.now()
             }
 
