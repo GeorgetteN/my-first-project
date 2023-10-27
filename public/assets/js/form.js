@@ -11,9 +11,9 @@ const domMapping = () => {
 
 const handleSubmit = evt => {
     evt.preventDefault();
-
+ // Zu übertragende Daten aus dem Formular extrahieren
     const payload = new FormData(elements.formNewContent);
-    console.log(payload);
+    console.log("playload:"+ payload);
 
     fetch('/save_form', {
         method: 'post', 
@@ -21,7 +21,13 @@ const handleSubmit = evt => {
     }).then(
         res => res.json()
     ).then(
-        res => console.log(res)
+        res => {
+            if (res.status == 'ok') {
+                console.log(res.data);
+            } else {
+                console.warn('err', res.err);
+            }
+        }
     ).catch(
         console.warn
         )}

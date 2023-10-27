@@ -6,42 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Formular</title>
-    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/form.css" />
 
     <script src="./assets/js/form.js" type="module"></script>
 </head>
 
 <body>
-    <h1>Formularbeispiel</h1>
-    <form action="" method="" id="formNewContent">
-        <label for="vorname">Vorname:</label>
-        <input type="text" id="vorname" name="vorname" required><br><br>
+    <div class="container">
+        <div class="forms">
+            <div class="form formular">
+                <span class="title">Formularbeispiel</span>
+                <form action="" method="" id="formNewContent">
+                    <div class="input-field">
+                        <!--  <label for="vorname">Vorname:</label> -->
+                        <input type="text" id="vorname" placeholder="Vorname" name="vorname" required><br><br>
+                    </div>
+                    <div class="input-field">
+                        <!-- <label for="nachname">Nachname:</label> -->
+                        <input type="text" id="nachname" placeholder="Nachname" name="nachname" required><br><br>
+                    </div>
+                    <div class="input-field">
+                        <!-- <label for="email">E-Mail:</label> -->
+                        <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+                    </div>
 
-        <label for="nachname">Nachname:</label>
-        <input type="text" id="nachname" name="nachname" required><br><br>
+                    <label for="options">Abwesenheitsart:</label>
+                    <select id="options" name="options">
+                        <option value="urlaub">Urlaub</option>
+                        <option value="krankheit">Krankheit</option>
+                        <option value="uberstunden">Überstunden</option>
+                        <option value="arzttermin">Arzt Termin</option>
+                    </select><br><br>
 
-        <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email" required><br><br>
+                    <label for="start_date">Von:</label>
+                    <input type="date" id="start_date" name="start_date" required><br><br>
 
-        <label for="options">Abwesenheitsart:</label>
-        <select id="options" name="options">
-            <option value="urlaub">Urlaub</option>
-            <option value="krankheit">Krankheit</option>
-            <option value="uberstunden">Überstunden</option>
-            <option value="arzttermin">Arzt Termin</option>
-        </select><br><br>
-        <label for="start_date">Von:</label>
-        <input type="date" id="start_date" name="start_date" required><br><br>
+                    <label for="end_date">Bis:</label>
+                    <input type="date" id="end_date" name="end_date" required><br><br>
+                    <div class="input-field">
+                        <label for="nachricht">Nachricht:</label>
+                        <textarea id="nachricht" name="nachricht" rows="4" cols="50" required></textarea><br><br>
+                    </div>
+                    <div class="input-field button">
+                        <button>speichern</button>
+                    </div>
 
-        <label for="end_date">Bis:</label>
-        <input type="date" id="end_date" name="end_date" required><br><br>
-
-        <label for="nachricht">Nachricht:</label>
-        <textarea id="nachricht" name="nachricht" rows="4" cols="50" required></textarea><br><br>
-
-
-        <button>send</button>
-    </form>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

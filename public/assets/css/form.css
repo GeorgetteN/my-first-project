@@ -108,6 +108,17 @@ body {
     border-bottom-color: var(--bg-color);
 }
 
+.input-field label {
+    position: absolute;
+    top: -10%;
+    transform: translateY(-50%);
+    color: var(--bg-color);
+    font-size: 16px;
+    transition: all 0.2s ease;
+    left: 0;
+}
+
+
 .input-field i {
     position: absolute;
     top: 50%;
