@@ -35,6 +35,7 @@ myserver.post('/save_form', (request, response) => {
         else {
          
             console.log(fields);
+            const date = new Date();
             const content = {
                 vorname: fields.vorname[0],
                 nachname: fields.nachname[0],
@@ -42,7 +43,8 @@ myserver.post('/save_form', (request, response) => {
                 nachricht: fields.nachricht[0],
                 abwesend: fields.options[0],
                 startdate:fields.start_date[0],
-                enddate:fields.end_date[0]
+                enddate:fields.end_date[0],
+                antragstag: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
             }
             // Datenbank ansprechen
             const myDB = db.use(dbName);

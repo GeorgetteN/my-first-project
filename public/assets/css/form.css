@@ -22,49 +22,13 @@ body {
 
 .container {
     position: relative;
-    max-width: 430px;
+    max-width: 500px;
     width: 100%;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 10px var(--second-bg-color);
     overflow: hidden;
     margin: 0 20px;
-}
-
-.container .forms {
-    display: flex;
-    align-items: center;
-    height: 440px;
-    width: 200%;
-    transition: height 0.2s ease;
-}
-
-.container .form {
-    width: 50%;
-    padding: 30px;
-    background-color: #fff;
-    transition: margin-left 0.18s ease;
- 
-}
-
-/* .container.active .login {
-    margin-left: -50%;
-    opacity: 0;
-    transition: margin-left 0.18s ease, opacity 0.15s ease;
-}
-
-.container .signup {
-    opacity: 0;
-    transition: opacity 0.09s ease;
-}
-
-.container.active .signup {
-    opacity: 1;
-    transition: opacity 0.2s ease;
-} */
-
-.container .forms {
-    height: 600px;
 }
 
 .container .form .title {
@@ -80,120 +44,70 @@ body {
     bottom: 0;
     height: 3px;
     width: 30px;
-    background-color: var(--bg-color);
+    background-color: var(--second-bg-color);
     border-radius: 25px;
 }
 
-.form .input-field {
-    position: relative;
-    height: 50px;
+form{
+    margin-top: 25px;
+}
+
+input[type=text],input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button {
+  background-color: var(--second-bg-color);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: var(--second-bg-color);
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* float nach der Spalten löschen */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsives Layout - wenn der Bildschirm weniger als 600 Pixel breit ist, werden die beiden Spalten übereinander statt nebeneinander angeordnet */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
     width: 100%;
-    margin-top: 30px;
-}
-
-.input-field input {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    padding: 0 35px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    border-bottom: 2px solid #ccc;
-    border-top: 2px solid transparent;
-    transition: all 0.2s ease;
-}
-
-.input-field input:is(:focus, :valid) {
-    border-bottom-color: var(--bg-color);
-}
-
-.input-field label {
-    position: absolute;
-    top: -10%;
-    transform: translateY(-50%);
-    color: var(--bg-color);
-    font-size: 16px;
-    transition: all 0.2s ease;
-    left: 0;
-}
-
-
-.input-field i {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999;
-    font-size: 23px;
-    transition: all 0.2s ease;
-}
-
-.input-field input:is(:focus, :valid)~i {
-    color: var(--bg-color);
-}
-
-.input-field i.icon {
-    left: 0;
-}
-
-.input-field i.showrigth {
-    right: 0;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.form .checkbox-text {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.checkbox-text .checkbox-content {
-    display: flex;
-    align-items: center;
-}
-
-.checkbox-content input {
-    margin-right: 10px;
-    accent-color: var(--bg-color);
-}
-
-.form .text {
-    color: #333;
-    font-size: 14px;
-}
-
-.form a.text {
-    color: var(--bg-color);
-    text-decoration: none;
-}
-
-.form a:hover {
-    text-decoration: underline;
-}
-
-.form .button {
-    margin-top: 35px;
-}
-
-.form .button input {
-    border: none;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 6px;
-    background-color: var(--bg-color);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.button input:hover {
-    background-color: var(--second-bg-color);
-}
-
-.form .login-signup {
-    margin-top: 30px;
-    text-align: center;
+    margin-top: 0;
+  }
 }

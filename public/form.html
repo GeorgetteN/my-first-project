@@ -17,38 +17,72 @@
             <div class="form formular">
                 <span class="title">Formularbeispiel</span>
                 <form action="" method="" id="formNewContent">
-                    <div class="input-field">
-                        <!--  <label for="vorname">Vorname:</label> -->
-                        <input type="text" id="vorname" placeholder="Vorname" name="vorname" required><br><br>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="vorname">Vorname:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="vorname" placeholder="Dein Vorname.." name="vorname" required><br><br>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                            <label for="nachname">Nachname:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="nachname" placeholder="Dein Nachname.." name="nachname" required><br><br>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                            <label for="email">E-Mail:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="email" id="email" name="email" placeholder="Email.." required><br><br>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                            <label for="options">Abwesenheitsart:</label>
+                        </div>
+                        <div class="col-75">
+                            <select id="options" name="options">
+                                <option value="urlaub">Urlaub</option>
+                                <option value="krankheit">Krankheit</option>
+                                <option value="uberstunden">Überstunden</option>
+                                <option value="arzttermin">Arzt Termin</option>
+                            </select><br><br>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                            <label for="start_date">Von:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="date" id="start_date" name="start_date" required>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                            <label for="end_date">Bis:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="date" id="end_date" name="end_date" required>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                            <label for="nachricht">Hinweis:</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea id="nachricht" name="nachricht" rows="4" cols="50" required></textarea>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <input type="date" id="antragstag" name="antragstag" style="visibility: hidden;"><br><br>
                     </div>
-                    <div class="input-field">
-                        <!-- <label for="nachname">Nachname:</label> -->
-                        <input type="text" id="nachname" placeholder="Nachname" name="nachname" required><br><br>
-                    </div>
-                    <div class="input-field">
-                        <!-- <label for="email">E-Mail:</label> -->
-                        <input type="email" id="email" name="email" placeholder="Email" required><br><br>
-                    </div>
-
-                    <label for="options">Abwesenheitsart:</label>
-                    <select id="options" name="options">
-                        <option value="urlaub">Urlaub</option>
-                        <option value="krankheit">Krankheit</option>
-                        <option value="uberstunden">Überstunden</option>
-                        <option value="arzttermin">Arzt Termin</option>
-                    </select><br><br>
-
-                    <label for="start_date">Von:</label>
-                    <input type="date" id="start_date" name="start_date" required><br><br>
-
-                    <label for="end_date">Bis:</label>
-                    <input type="date" id="end_date" name="end_date" required><br><br>
-                    <div class="input-field">
-                        <label for="nachricht">Nachricht:</label>
-                        <textarea id="nachricht" name="nachricht" rows="4" cols="50" required></textarea><br><br>
-                    </div>
-                    <div class="input-field button">
-                        <button>speichern</button>
+                    <div class="row">
+                        <button type="submit">speichern</button>
                     </div>
 
                 </form>

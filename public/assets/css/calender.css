@@ -86,7 +86,7 @@ body {
     margin-bottom: 10px;
     margin-top: 10px;
     font-size: 12px;
-    color: #777;
+    color: var(--bg-color);
     z-index: 1;
     cursor: pointer;
     margin-top: 30px;
@@ -124,9 +124,10 @@ body {
 .days li.active{
     border-radius: 10px;
     background: #112e42 !important;
+    color: var(--text-color);
   
 }
 
 .days li.inactive {
-    color: rgb(110, 41, 41) !important;
+    color: #777 !important;
 }
