@@ -5,49 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Titel</title>
+    <title>Amelden</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/form.css" />
+    <link rel="stylesheet" href="./assets/css/login.css" />
 
-    <script src="./assets/js/calender.js" defer></script>
+    <script src="./assets/js/signin.js" type="module" defer></script>
 </head>
 
 <body>
+    <header class="header">
+        <a href="#" class="logo">AA</a>
+        <i class="fa fa-navicon" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="./login.html" class="active">Startseite</a>
+            <a href="./table.html">Mitarbeiter</a>
+            <a href="./calender.html">Mein Auswertung</a>
+            <a href="./form.html">Abwesenheit anlegen</a>
+        </nav>
+    </header>
     <div class="container">
         <div class="forms">
             <div class="form signup">
-                <span class="title">Registration</span>
-                <form action="#">
+                <span class="title">Anmelden</span>
+                <form id="formSign">
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your name" required>
+                        <input type="text" name="username" placeholder="Geben Sie Ihren Namen ein" required>
                         <i class="fa fa-user"></i>
                     </div>
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email" required>
+                        <input type="text"  name="useremail" placeholder="Geben Sie Ihre E-Mail ein" required>
                         <i class="fa fa-envelope"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Create a password" required>
+                        <input type="text" name="departement" placeholder="Geben Sie Ihre Abteilung ein" required>
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="userpass" class="password" placeholder="Ein Passwort erstellen" required>
                         <i class="fa fa-lock"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Confirm a password" required>
+                        <input id="password" type="password" name="userconfirmpass" class="password" placeholder="Bestätigen Sie ein Passwort" required>
                         <i class="fa fa-lock"></i>
-                        <i class="fa fa-eye showrigth"></i>
+                        <i class="fa fa-eye showrigth" id="showPass"></i>
                     </div>
                     <div class="checkbox-text">
                         <div class="checkbox-content">
-                            <input type="checkbox" id="termCon">
-                            <label for="termCon" class="text">I accepted all terms and conditions</label>
+                            <input type="checkbox" id="termCon" name="termCon" required>
+                            <label for="termCon" class="text">Ich akzeptiere alle Bedingungen und Konditionen</label>
                         </div>
                     </div>
                     <div class="input-field button">
-                        <input type="button" value="Signup">
+                        <input type="submit" value="Signin">
                     </div>
                 </form>
                 <div class="login-signup">
-                    <span class="text">Already a member?
-                        <a href="#" class="text login-link">Login Now</a>
+                    <span class="text">Sie sind bereits Mitglied?
+                        <a href="./login.html" class="text login-link" >Jetzt Einloggen</a>
                     </span>
                 </div>
             </div>
