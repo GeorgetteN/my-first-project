@@ -1,3 +1,6 @@
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +8,15 @@
     font-family: 'Poppins', sans-serif;
 }
 
-:root {
-    --bg-color: #081b29;
-    --second-bg-color: #112e42;
-    --text-color: #ededed;
-    --main-color: #00abf0;
+:root{
+    --bg-color:#081b29;
+    --second-bg-color:#112e42;
+    --text-color:#ededed;
+    --main-color:#00abf0;
 }
 
 body {
-    height: 100vh;
+    height: 110vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,11 +43,72 @@ body {
     font-weight: 600px;
 }
 
+input:invalid{
+    border-color: rgb(233, 169, 169);
+}
+
+.error{
+    border-color: rgb(233, 169, 169);
+}
+
 .navbar a{
-    font-size: 1.7rem;
+    font-size: 1.1rem;
     color: var(--text-color);
     font-weight: 500;
-    margin-left: 3.5rem;
+    margin-left: 1.5rem;
+    transition: .3s;
+}
+
+
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+}
+
+.header { grid-area: header; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'main main main main main main'
+    'footer footer footer footer footer footer';
+  gap: 10px;
+  padding: 10px;
+}
+
+main{
+    margin: 0;
+    padding: 5px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-text p {
+    font-size: 0.8rem;
+    margin-left: 75px;
+    background-color: var(--bg-color);
+}
+
+
+.logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600px;
+}
+
+.navbar a{
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 1.5rem;
     transition: .3s;
 }
 
@@ -142,18 +206,22 @@ body {
     background: #f2f2f2;
 }
 
-/* .days li.active{
-    list-style-type: none;
-    display: inline-block;
-    width: 13.6%;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-size: 12px;
-    background-color: #112e42 !important;
-    color: var(--text-color);
-
-} */
+button {
+    background-color: var(--main-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    font-size: 20px;
+  }
+  
+  button:hover {
+    background-color: var(--second-bg-color);
+  }
 
 .days li.active{
     border-radius: 10px;
@@ -165,3 +233,86 @@ body {
 .days li.inactive {
     color: #777 !important;
 }
+
+.days li.absentDays{
+    background-color: chartreuse !important;
+}
+
+.days li.absentDay1{
+    background-color: rgb(0, 225, 255);
+}
+
+.days li.absentDay1{
+    background-color: rgb(255, 187, 0);
+}
+
+.days li.absentDay1{
+    background-color: rgb(225, 0, 255);
+}
+
+.days li.absentDay1{
+    background-color: rgb(255, 0, 21);
+}
+
+#myChart{
+    background-color: var(--text-color);
+    border-radius: 10px;
+}
+
+.col-50{
+    float: left;
+    width: 50%;
+    padding: 20px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  
+  /* float nach der Spalten löschen */
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsives Layout - wenn der Bildschirm weniger als 600 Pixel breit ist, werden die beiden Spalten übereinander statt nebeneinander angeordnet */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75,.col-50, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  mainTable{
+    margin: 0;
+    padding: 5px;
+  }
+
+  
+#employees {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+  }
+  
+  #employees td, #employees th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #employees tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #employees tr:hover {background-color: #ddd;}
+  
+  #employees th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--second-bg-color);
+    color: white;
+  }

@@ -58,9 +58,7 @@ myserver.post('/save_form', (request, response) => {
         keepExtensions: true
     })
     myForm.parse(request, (err, fields, files) => {
-        if (fields.userpass[0] !== fields.userconfirmpass[0]) {
-            sendError(response, "Passwörter sind nicht gleich");
-        } else {
+        
             const date = new Date();
             const content = {
                 vorname: fields.vorname[0],
@@ -70,7 +68,9 @@ myserver.post('/save_form', (request, response) => {
                 abwesend: fields.options[0],
                 startdate: fields.start_date[0],
                 enddate: fields.end_date[0],
-                requestdate: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+                requestdate: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`,
+                vertreter:fields.vertreter[0],
+                zeit:fields.time[0]
             };
             const myDB = db.use(dbForm);  // Datenbank ansprechen
 
@@ -78,7 +78,7 @@ myserver.post('/save_form', (request, response) => {
                 () => loadAndSendAllContents(response, myDB)
             )
         }
-    })
+    )
 })
 
 
@@ -114,14 +114,14 @@ myserver.post('/save_user', (request, response) => {
 
 myserver.get('/load_user', (request, response) => {
     const myDB = db.use(dbUser);
-    loadAndSendAllContents(response, myDB) // Aktuelle Contents aus der DB laden
+    loadAndSendAllContents(response, myDB) // Aktuelle Contents aus der DB user laden
 })
 
 
 
 myserver.get('/load_form', (request, response) => {
     const myDB = db.use(dbForm);
-    loadAndSendAllContents(response, myDB) // Aktuelle Contents aus der DB laden
+    loadAndSendAllContents(response, myDB) // Aktuelle Contents aus der DB formcontent laden
 });
 
 

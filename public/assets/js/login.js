@@ -11,10 +11,14 @@ const domMapping = () => {
     elements.name = dom.$('#username');
     elements.pass = dom.$('#password');
     elements.pass.classList.remove('error');
-    elements.logContainer =dom.$('.container');
-    elements.profContainer =dom.$('.profile');
-    elements.profname =dom.$('.name');
-    elements.profemail =dom.$('.email');
+    elements.logContainer = dom.$('.container');
+    elements.profContainer = dom.$('.profile');
+    elements.profname = dom.$('.name');
+    elements.profemail = dom.$('.email');
+    elements.profabteilung = dom.$('.departement');
+    elements.profregis = dom.$('.last-resgister-day');
+    elements.profuser = dom.$('.user-profil');
+    elements.header = dom.$('.header');
 }
 
 const appendEventlisteners = () => {
@@ -24,17 +28,22 @@ const appendEventlisteners = () => {
 const renderPreview = (contents, namedata, passdata) => {
 
     contents.forEach(content => {
-        if (typeof namedata !== "undefined" && typeof passdata !== "undefined"){
-            if(content.userame === namedata && content.userpass === passdata) {
-                console.log (content)
+        if (typeof namedata !== "undefined" && typeof passdata !== "undefined") {
+            if (content.userame === namedata && content.userpass === passdata) {
+                console.log(content)
                 elements.logContainer.style.display = 'none';
                 elements.profContainer.style.display = 'block';
+                elements.profuser.innerText = content.userame;
+                elements.header.style.display='flex';          
+                localStorage.setItem('savedUseremail', content.useremail); // Formulardaten id im Local Storage speichern
                 elements.profname.innerText = content.userame;
                 elements.profemail.innerText = content.useremail;
+                elements.profabteilung.innerText = content.departement;
+                elements.profregis.innerText = content.registerdate;
             } else {
                 elements.pass.classList.add('error');
             }
-        }    
+        }
     })
 }
 

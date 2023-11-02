@@ -1,6 +1,3 @@
-
-
-
 * {
     margin: 0;
     padding: 0;
@@ -8,11 +5,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
-:root{
-    --bg-color:#081b29;
-    --second-bg-color:#112e42;
-    --text-color:#ededed;
-    --main-color:#00abf0;
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
 }
 
 body {
@@ -24,34 +21,49 @@ body {
 }
 
 
-.header{
+.header {
+    display: none;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     padding: 2rem 9%;
-    background:var(--bg-color);
-    display: flex;
+    background: var(--bg-color);
+    /*   display: flex; */
     justify-content: space-between;
     align-items: center;
-    z-index: 100;  
+    z-index: 100;
 }
 
-.logo{
+.logo {
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    font-family: math;
+    margin: 5px;
 }
 
-input:invalid{
+.header-rigth {
+    display: flex;
+}
+
+.user-profil {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 20px;
+}
+
+input:invalid {
     border-color: rgb(233, 169, 169);
 }
 
-.error{
+.error {
     border-color: rgb(233, 169, 169);
 }
 
-.navbar a{
+.navbar a {
     font-size: 1.1rem;
     color: var(--text-color);
     font-weight: 500;
@@ -61,30 +73,47 @@ input:invalid{
 
 
 .navbar a:hover,
-.navbar a.active{
+.navbar a.active {
     color: var(--main-color);
 }
 
-.header { grid-area: header; }
-.main { grid-area: main; }
-.footer { grid-area: footer; }
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
 
 .grid-container {
-  display: grid;
+    /* display: grid;
   grid-template-areas:
     'header header header header header header'
     'main main main main main main'
     'footer footer footer footer footer footer';
   gap: 10px;
-  padding: 10px;
+  padding: 10px; */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 500px;
+    border-radius: 10px;
 }
 
-main{
+div.profile {
+    display: none;
+}
+
+main {
     margin: 0;
     padding: 5px;
 }
 
-.footer{
+.footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -93,58 +122,29 @@ main{
 
 .footer-text p {
     font-size: 0.8rem;
-    margin-left: 75px;
+    margin: 30px;
     background-color: var(--bg-color);
 }
 
-
-
-.container {
-
-    position: relative;
-    max-width: 430px;
-    width: 100%;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px var(--second-bg-color);
-    overflow: hidden;
-    margin: 0 20px;
+#menu-icon {
+    display: none;
 }
+
 
 .container .forms {
     display: flex;
     align-items: center;
-    height: 440px;
     width: 200%;
     transition: height 0.2s ease;
 }
 
 .container .form {
     width: 50%;
+    border-radius: 10px;
     padding: 30px;
     background-color: #fff;
     transition: margin-left 0.18s ease;
- 
-}
 
-/* .container.active .login {
-    margin-left: -50%;
-    opacity: 0;
-    transition: margin-left 0.18s ease, opacity 0.15s ease;
-}
-
-.container .signup {
-    opacity: 0;
-    transition: opacity 0.09s ease;
-}
-
-.container.active .signup {
-    opacity: 1;
-    transition: opacity 0.2s ease;
-} */
-
-.container .forms {
-    height: 600px;
 }
 
 .container .form .title {
@@ -168,7 +168,7 @@ main{
     position: relative;
     height: 50px;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .input-field input {
@@ -278,19 +278,18 @@ main{
     text-align: center;
 }
 
-.profile {
+/* .profile {
     display: none;
     background-color: #fff;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    max-width: 400px;
     border-radius: 10px;
     font-size: 25px;
-}
+} */
 
-.profile i.imag{
+.profile i.imag {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -299,7 +298,7 @@ main{
     font-size: 110px;
 }
 
-.profile h1 {
+/* .profile h1 {
     margin: 10px 0;
 }
 
@@ -315,7 +314,7 @@ main{
 
 .profile-header {
     display: flex;
-}
+} */
 
 button {
     background-color: #007bff;
@@ -335,4 +334,62 @@ button {
     font-size: 24px;
     color: #e74c3c;
     cursor: pointer;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.w-5 {
+    width: 5%;
+}
+
+.w-30 {
+    float: left;
+    width: 30%;
+}
+
+.margin-20{
+    margin: 20px;
+}
+
+.col-50 {
+    float: left;
+    width: 50%;
+    padding: 20px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+
+/* float nach der Spalten löschen */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsives Layout - wenn der Bildschirm weniger als 600 Pixel breit ist, werden die beiden Spalten übereinander statt nebeneinander angeordnet */
+@media screen and (max-width: 600px) {
+
+    .col-25,
+    .col-75,
+    .col-50,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
 }

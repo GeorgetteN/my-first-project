@@ -7,6 +7,8 @@ const elements = {};
 // FUNKTIONEN
 const domMapping = () => {
     elements.formNewContent = dom.$('#formNewContent');
+    elements.savedUsername = localStorage.getItem('savedUsername');
+    elements.profuser = dom.$('.user-profil');
 }
 
 const handleSubmit = evt => {
@@ -38,7 +40,9 @@ const appendEventlisteners = () => {
 
 const init = () => {
     domMapping();
-    appendEventlisteners();
+  
+        appendEventlisteners(); 
+       
 }
 
 // INIT

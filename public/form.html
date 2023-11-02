@@ -18,81 +18,126 @@
         <nav class="navbar">
             <a href="./login.html" >Startseite</a>
             <a href="./table.html">Mitarbeiter</a>
-            <a href="./calender.html">Mein Auswertung</a>
-            <a href="./form.html" class="active">Abwesenheit anlegen</a>
+            <a href="./calender.html">Übersicht</a>
+            <a href="./form.html" class="active">Abwesenheit <i class="fa fa-plus"></i></a>
         </nav>
     </header>
     <div class="container">
         <div class="forms">
             <div class="form formular">
-                <span class="title">Formularbeispiel</span>
+                <span class="title">Abwesenheit anlegen</span>
                 <form action="" method="" id="formNewContent">
                     <div class="row">
-                        <div class="col-25">
-                            <label for="vorname">Vorname:</label>
+                        <div class="col-50">
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="vorname">Vorname:</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="text" id="vorname" placeholder="Dein Vorname.." name="vorname" required><br><br>
+                                </div>
+                            </div>
+                    
+                          <div class="row">
+                            <div class="col-25">
+                                <label for="nachname">Nachname:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="nachname" placeholder="Dein Nachname.." name="nachname" required><br><br>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                                <label for="email">E-Mail:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="email" id="email" name="email" placeholder="Email.." required><br><br>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-25">
+                                <label for="vertreter">Vertreter:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="vertreter" name="vertreter" placeholder="Vertreter.." ><br><br>
+                            </div>
+                          </div>
                         </div>
-                        <div class="col-75">
-                            <input type="text" id="vorname" placeholder="Dein Vorname.." name="vorname" required><br><br>
+                        <div class="col-50">
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="options">Abwesenheit:</label>
+                                </div>
+                                <div class="col-75">
+                                    <select id="options" name="options">
+                                        <option value="urlaub">Urlaub</option>
+                                        <option value="krankheit">Krankheit</option>
+                                        <option value="uberstunden">Überstunden</option>
+                                        <option value="arzttermin">Arzt Termin</option>
+                                        <option value="schulung">Schulung</option>
+                                    </select><br><br>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-33">
+                                    <input
+                                    type="radio"
+                                    id="timeChoice1"
+                                    name="time"
+                                    value="ganztags"
+                                    checked />
+                                  <label for="timeChoice1">Ganztags</label>
+                                </div>
+                                <div class="col-33">
+                                    <input
+                                    type="radio"
+                                    id="timeChoice2"
+                                    name="time"
+                                    value="vormitags"
+                                     />
+                                  <label for="timeChoice2">Vormittags</label>
+                                </div>
+                                <div class="col-33">
+                                    <input
+                                    type="radio"
+                                    id="timeChoice3"
+                                    name="time"
+                                    value="nachmitags"
+                                    />
+                                  <label for="timeChoice2">Nachmittags</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-25">
+                                    <label for="start_date">Von:</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="date" id="start_date" name="start_date" required>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-25">
+                                    <label for="end_date">Bis:</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="date" id="end_date" name="end_date" required>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-25">
+                                    <label for="nachricht">Hinweis:</label>
+                                </div>
+                                <div class="col-75">
+                                    <textarea id="nachricht" name="nachricht" rows="4" cols="50" required></textarea>
+                                </div>
+                              </div>
+                            <div class="row">
+                                <input type="date" id="antragstag" name="antragstag" style="visibility: hidden;"><br><br>
+                            </div>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-25">
-                            <label for="nachname">Nachname:</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="nachname" placeholder="Dein Nachname.." name="nachname" required><br><br>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-25">
-                            <label for="email">E-Mail:</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="email" id="email" name="email" placeholder="Email.." required><br><br>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-25">
-                            <label for="options">Abwesenheitsart:</label>
-                        </div>
-                        <div class="col-75">
-                            <select id="options" name="options">
-                                <option value="urlaub">Urlaub</option>
-                                <option value="krankheit">Krankheit</option>
-                                <option value="uberstunden">Überstunden</option>
-                                <option value="arzttermin">Arzt Termin</option>
-                            </select><br><br>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-25">
-                            <label for="start_date">Von:</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="date" id="start_date" name="start_date" required>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-25">
-                            <label for="end_date">Bis:</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="date" id="end_date" name="end_date" required>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-25">
-                            <label for="nachricht">Hinweis:</label>
-                        </div>
-                        <div class="col-75">
-                            <textarea id="nachricht" name="nachricht" rows="4" cols="50" required></textarea>
-                        </div>
-                      </div>
+                     
                     <div class="row">
-                        <input type="date" id="antragstag" name="antragstag" style="visibility: hidden;"><br><br>
-                    </div>
-                    <div class="row">
-                        <button type="submit">Speichern</button>
+                        <button type="submit">Abwesenheit anlegen</button>
                     </div>
 
                 </form>

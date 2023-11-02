@@ -6,14 +6,14 @@ const elements = {};
 
 // FUNKTIONEN
 const domMapping = () => {
-    //elements.main = dom.$('main');
+    //elements.mainTable = dom.$('mainTable');
 }
 
-const renderContents = contents => {
-    const mainElement = document.querySelector('main');
+const renderContentTables = contents => {
+    const mainTableElement = document.querySelector('mainTable');
 
 
-    if (mainElement) {
+    if (mainTableElement) {
         const tableElement = document.createElement('table');
         tableElement.id = 'employees';
 
@@ -22,7 +22,7 @@ const renderContents = contents => {
         const headerRow = document.createElement('tr');
 
         // Tabelle header erzeugen 
-        const headers = ['Vorname', 'Nachname', 'Email', 'Angetragen am', 'Abwesenheitsart', 'Von', 'Bis', 'Hinweis'];
+        const headers = ['Vorname', 'Nachname', 'Email', 'Angetragen am', 'Abwesenheitsart', 'Von', 'Bis', 'Hinweis', 'Vertreter', 'Zeitraum'];
 
         headers.forEach(headerText => {
             const headerCell = document.createElement('th');
@@ -46,7 +46,7 @@ const renderContents = contents => {
             cell3.textContent = content.email;
             row.appendChild(cell3);
             const cell4 = document.createElement('td');
-            cell4.textContent = content.antragstag;
+            cell4.textContent = content.requestdate;
             row.appendChild(cell4);
             const cell5 = document.createElement('td');
             cell5.textContent = content.abwesend;
@@ -60,12 +60,18 @@ const renderContents = contents => {
             const cell8 = document.createElement('td');
             cell8.textContent = content.nachricht;
             row.appendChild(cell8);
+            const cell9 = document.createElement('td');
+            cell9.textContent = content.vertreter;
+            row.appendChild(cell9);
+            const cell10 = document.createElement('td');
+            cell10.textContent = content.zeit;
+            row.appendChild(cell10);
             tbodyElement.appendChild(row);
         })
         tableElement.appendChild(tbodyElement);
 
-        // Tabelle in Main tag einfügen
-        const containerElement = document.querySelector('main');
+        // Tabelle in mainTable tag einfügen
+        const containerElement = document.querySelector('mainTable');
         containerElement.appendChild(tableElement);
     }
 }
@@ -88,7 +94,7 @@ const loadContents = () => {
 const init = () => {
     domMapping();
     loadContents().then(
-        renderContents
+        renderContentTables
     ).catch(
         console.warn
     );
@@ -96,5 +102,7 @@ const init = () => {
 
 // INIT
 init();
+
+
 
 

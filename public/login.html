@@ -14,77 +14,105 @@
 </head>
 
 <body>
-    <div class="grid-container">
-        <header class="header">
-            <a href="#" class="logo">AA</a>
-            <i class="fa fa-navicon" id="menu-icon"></i>
-            <nav class="navbar">
-                <a href="./login.html" class="active">Startseite</a>
-                <a href="./table.html">Mitarbeiter</a>
-                <a href="./calender.html">Mein Auswertung</a>
-                <a href="./form.html">Abwesenheit <i class="fa fa-plus"></i></a>
-            </nav>
-        </header>
-        <main class="main">
-            <div class="container">
-                <div class="forms">
-                    <div class="form login">
-                        <span class="title">Einloggen</span>
-                        <form id="formLogin">
-                            <div class="input-field">
-                                <input type="text" id="username" name="username" placeholder="Geben Sie Ihre E-Mail ein"
-                                    required>
-                                <i class="fa fa-envelope"></i>
+    <main>
+        <div class="grid-container">
+            <header class="header">
+                <div class="header-rigth">
+                    <a href="#" class="logo">AA</a>
+                    <div class="user-profil"></div>
+                </div>
+                <i class="fa fa-navicon" id="menu-icon"></i>
+                <nav class="navbar">
+                    <a href="./login.html" class="active">Startseite</a>
+                    <a href="./table.html">Mitarbeiter</a>
+                    <a href="./calender.html">Übersicht</a>
+                    <a href="./form.html">Abwesenheit <i class="fa fa-plus"></i></a>
+                </nav>
+            </header>
+            <main class="main">
+                <div class="container">
+                    <div class="forms">
+                        <div class="form login">
+                            <span class="title">Einloggen</span>
+                            <form id="formLogin">
+                                <div class="input-field">
+                                    <input type="text" id="username" name="username"
+                                        placeholder="Geben Sie Ihre E-Mail ein" required>
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="input-field">
+                                    <input type="password" id="password" name="password" class="password"
+                                        placeholder="Geben Sie Ihr Passwort ein" required>
+                                    <i class="fa fa-envelope"></i>
+                                    <i class="fa fa-eye showrigth"></i>
+                                </div>
+                                <div class="input-field button">
+                                    <input type="submit" value="Einloggen">
+                                </div>
+                            </form>
+                            <div class="login-signup">
+                                <span class="text">Sie sind kein Mitglied?
+                                    <a href="./signin.html" class="text signup-link">Jetzt Anmelden</a>
+                                </span>
                             </div>
-                            <div class="input-field">
-                                <input type="password" id="password" name="password" class="password"
-                                    placeholder="Geben Sie Ihr Passwort ein" required>
-                                <i class="fa fa-envelope"></i>
-                                <i class="fa fa-eye showrigth"></i>
-                            </div>
-                            <div class="input-field button">
-                                <input type="submit" value="Einloggen">
-                            </div>
-                        </form>
-                        <div class="login-signup">
-                            <span class="text">Sie sind kein Mitglied?
-                                <a href="./signin.html" class="text signup-link">Jetzt Anmelden</a>
-                            </span>
                         </div>
                     </div>
                 </div>
-    
-            </div>
-    
-            <div class="profile">
-                <div class="close-icon">
-                    <i class="fa fa-times"></i>
-                </div>
-                <h3>Mein Profil</h3>
-                
-                <div class="profile-header">
-                    <div>
-                        <i class="fa fa-user imag"></i>
+
+                <div class="profile">
+
+                    <h3 class="margin-20">Mein Profil</h3>
+
+                    <div class="profile-header">
+                        <div class="margin-20">
+                            <i class="fa fa-user imag"></i>
+                        </div>
+                        <div class="info margin-20">
+                            <div class="row">
+                                <div class="w-5"><i class="fa fa-user "></i></div>
+                                <div class="w-30">Name:</div>
+                                <div >
+                                    <h5 class="name "></h5>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="w-5"><i class="fa fa-briefcase"> </i></div>
+                                <div class="w-30">Abteilung:</div>
+                                <div>
+                                    <h5 class="departement"></h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="w-5"><i class="fa fa-envelope"></i></div>
+                                <div class="w-30">Email: </div>
+                                <div>
+                                    <h6 class="email"> </h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="w-5"><i class="fa fa-flag"></i> </div>
+                                <div class="w-30">Resgistiert am :</div>
+                                <div>
+                                    <p class="last-resgister-day"> </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h5 class="name"></h5>
-                        <h5 class="departement"></h5>
-                        <h6 class="email"> <i class="fa fa-envelope"></i> Email: </h6>
-                        <p class="last-resgister-day"><i class="fa fa-envelope"></i> Resgistiert am : </p>
+                    <div class="profile-actions margin-20">
+                        <button id="editUser">Benutzer bearbeiten</button>
                     </div>
                 </div>
-                <div class="profile-actions">
-                    <button id="editUser">Benutzer bearbeiten</button>
-                </div>
-            </div>
-        </main>
+            </main>
+        </div>
         <footer class="footer">
             <div class="footer-text">
                 <p>Copyright &copy; 2023 | All Rights Reserved</p>
             </div>
         </footer>
-    </div>
-   
+    </main>
+
+
 
 </body>
 

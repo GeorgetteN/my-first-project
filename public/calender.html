@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>myServer</title>
-        <link rel="stylesheet" href="./assets/css/calender.css" />
-        
-        <script src="./assets/js/calender.js" type="module" defer></script>
-    </head>
-    <body>
-        <header class="header">
-            <a href="#" class="logo">AA</a>
-            <i class="fa fa-navicon" id="menu-icon"></i>
-            <nav class="navbar">
-                <a href="./login.html" >Startseite</a>
-                <a href="./table.html">Mitarbeiter</a>
-                <a href="./calender.html" class="active">Auswertung</a>
-                <a href="./form.html">neu anlegen</a>
-            </nav>
-        </header>
-        <main>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ubersich</title>
+    <link rel="stylesheet" href="./assets/css/calender.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+    <script src="./assets/js/calender.js" type="module" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">AA</a>
+        <i class="fa fa-navicon" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="./login.html">Startseite</a>
+            <a href="./table.html">Mitarbeiter</a>
+            <a href="./calender.html" class="active">Übersicht </a>
+            <a href="./form.html">Abwesenheit <i class="fa fa-plus"></i></a>
+        </nav>
+    </header>
+
+    <div>
+        <div class="user-sicht">
+            <button id="showT">Tabelle</button>
+            <button id="showG">Grafik</button>
+        </div>
+        <mainTable class="usertab"></mainTable>
+        <main class="col-50">
             <div class="wrapper">
                 <header>
                     <div class="month">
@@ -31,19 +40,26 @@
                         </div>
                     </div>
                     <div class="calender">
-                        <ul class="weeks">   
+                        <ul class="weeks">
                             <li>Mo</li>
                             <li>Di</li>
                             <li>Mi</li>
                             <li>Do</li>
                             <li>Fr</li>
-                            <li>Sa</li> 
+                            <li>Sa</li>
                             <li>So</li>
                         </ul>
                         <ul class="days"></ul>
                     </div>
                 </header>
-              </div>
+            </div>
         </main>
-    </body>
+        <section class="graphic col-50">
+            <canvas id="myChart"></canvas>
+        </section>
+    </div>
+
+
+</body>
+
 </html>
